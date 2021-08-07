@@ -6,6 +6,7 @@ import { FormInputsComponent } from './form-inputs/form-inputs.component';
 import { FormLayoutsComponent } from './form-layouts/form-layouts.component';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { ButtonsComponent } from './buttons/buttons.component';
+import { NotFoundComponent } from '../miscellaneous/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -16,10 +17,10 @@ const routes: Routes = [
         path: 'inputs',
         component: FormInputsComponent,
       },
-      {
-        path: 'layouts',
-        component: FormLayoutsComponent,
-      },
+      // {
+      //   path: 'layouts',
+      //   component: FormLayoutsComponent,
+      // },
       {
         path: 'layouts',
         component: FormLayoutsComponent,
@@ -32,6 +33,15 @@ const routes: Routes = [
         path: 'datepicker',
         component: DatepickerComponent,
       },
+      {
+        path: '',
+        redirectTo: 'inputs',
+        pathMatch: 'full',
+      },
+      {
+        path: '**',
+        component: NotFoundComponent
+      }
     ],
   },
 ];
